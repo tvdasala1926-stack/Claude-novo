@@ -1,0 +1,422 @@
+[
+  {
+    "product": {
+      "name": "Teclado De Escritório Com 63 Teclados Mecânicos",
+      "price": 400.0,
+      "commission_rate": null,
+      "commission_brl": 24.0,
+      "sales": 10800,
+      "rating": 4.7
+    },
+    "score": 0.9061508632628565,
+    "used_fields": [
+      "sales",
+      "commission_brl",
+      "rating"
+    ],
+    "missing_fields": []
+  },
+  {
+    "product": {
+      "name": "Teclado Mecânico Gamer NS61 RGB New Sunny",
+      "price": 90.77,
+      "commission_rate": null,
+      "commission_brl": 5.9,
+      "sales": 11100,
+      "rating": 4.9
+    },
+    "score": 0.7716568544995794,
+    "used_fields": [
+      "sales",
+      "commission_brl",
+      "rating"
+    ],
+    "missing_fields": []
+  },
+  {
+    "product": {
+      "name": "Teclado mecânico Mini 60% RGB FURYCUBE TS61",
+      "price": null,
+      "commission_rate": null,
+      "commission_brl": null,
+      "sales": 5300,
+      "rating": 4.9
+    },
+    "score": 0.6175000329741351,
+    "used_fields": [
+      "sales",
+      "rating"
+    ],
+    "missing_fields": [
+      "commission_brl"
+    ]
+  },
+  {
+    "product": {
+      "name": "Mouse Gamer Sem Fio G11 PAW311 BT 2.4G",
+      "price": 143.83,
+      "commission_rate": null,
+      "commission_brl": 8.79,
+      "sales": 4800,
+      "rating": 4.8
+    },
+    "score": 0.4772841924392486,
+    "used_fields": [
+      "sales",
+      "commission_brl",
+      "rating"
+    ],
+    "missing_fields": []
+  },
+  {
+    "product": {
+      "name": "Mini Teclado Mecânico 61/68 ABNT RGB",
+      "price": 176.0,
+      "commission_rate": null,
+      "commission_brl": 11.44,
+      "sales": null,
+      "rating": null
+    },
+    "score": 0.4718250630782169,
+    "used_fields": [
+      "commission_brl"
+    ],
+    "missing_fields": [
+      "sales",
+      "rating"
+    ]
+  },
+  {
+    "product": {
+      "name": "Teclado Magnético Ldon Rapid Trigger",
+      "price": 239.9,
+      "commission_rate": null,
+      "commission_brl": 16.19,
+      "sales": 1200,
+      "rating": 4.9
+    },
+    "score": 0.44445031273734653,
+    "used_fields": [
+      "sales",
+      "commission_brl",
+      "rating"
+    ],
+    "missing_fields": []
+  },
+  {
+    "product": {
+      "name": "Teclado magnético 65% M68 HE V2",
+      "price": null,
+      "commission_rate": null,
+      "commission_brl": null,
+      "sales": 2300,
+      "rating": 4.9
+    },
+    "score": 0.41965522244351533,
+    "used_fields": [
+      "sales",
+      "rating"
+    ],
+    "missing_fields": [
+      "commission_brl"
+    ]
+  },
+  {
+    "product": {
+      "name": "Mouse Gamer ATTACK SHARK X11 Sem Fio Tri-Mode",
+      "price": 170.5,
+      "commission_rate": null,
+      "commission_brl": 11.08,
+      "sales": 1500,
+      "rating": 4.8
+    },
+    "score": 0.3538335117116638,
+    "used_fields": [
+      "sales",
+      "commission_brl",
+      "rating"
+    ],
+    "missing_fields": []
+  },
+  {
+    "product": {
+      "name": "H'MASTON Teclado Mecânico Gamer Sem Fio 61 Teclas",
+      "price": 219.98,
+      "commission_rate": null,
+      "commission_brl": 13.65,
+      "sales": 1300,
+      "rating": 4.7
+    },
+    "score": 0.33702295741928184,
+    "used_fields": [
+      "sales",
+      "commission_brl",
+      "rating"
+    ],
+    "missing_fields": []
+  },
+  {
+    "product": {
+      "name": "TS61 Teclado mecânico ABNT2 RGB",
+      "price": null,
+      "commission_rate": null,
+      "commission_brl": null,
+      "sales": 981,
+      "rating": 4.9
+    },
+    "score": 0.33266945408021953,
+    "used_fields": [
+      "sales",
+      "rating"
+    ],
+    "missing_fields": [
+      "commission_brl"
+    ]
+  },
+  {
+    "product": {
+      "name": "Teclado De Escritório Com 63 Teclados (variante A)",
+      "price": null,
+      "commission_rate": null,
+      "commission_brl": null,
+      "sales": 2500,
+      "rating": 4.7
+    },
+    "score": 0.3185591621931756,
+    "used_fields": [
+      "sales",
+      "rating"
+    ],
+    "missing_fields": [
+      "commission_brl"
+    ]
+  },
+  {
+    "product": {
+      "name": "K-SNAKE Mouse Gamer X11 Sem Fio Bluetooth",
+      "price": 118.15,
+      "commission_rate": null,
+      "commission_brl": 10.25,
+      "sales": 1400,
+      "rating": 4.7
+    },
+    "score": 0.2987461487790978,
+    "used_fields": [
+      "sales",
+      "commission_brl",
+      "rating"
+    ],
+    "missing_fields": []
+  },
+  {
+    "product": {
+      "name": "Mouse Gamer RGB design ergonômico",
+      "price": 32.19,
+      "commission_rate": null,
+      "commission_brl": 2.58,
+      "sales": 3400,
+      "rating": 4.7
+    },
+    "score": 0.29431174216549244,
+    "used_fields": [
+      "sales",
+      "commission_brl",
+      "rating"
+    ],
+    "missing_fields": []
+  },
+  {
+    "product": {
+      "name": "Teclado Mecânico 61% Gamer RGB PXK68",
+      "price": 97.97,
+      "commission_rate": null,
+      "commission_brl": 5.88,
+      "sales": 1200,
+      "rating": 4.8
+    },
+    "score": 0.2743830293058913,
+    "used_fields": [
+      "sales",
+      "commission_brl",
+      "rating"
+    ],
+    "missing_fields": []
+  },
+  {
+    "product": {
+      "name": "Kit Teclado com Mouse Gamer Luminoso",
+      "price": 49.5,
+      "commission_rate": null,
+      "commission_brl": 2.97,
+      "sales": 2000,
+      "rating": 4.7
+    },
+    "score": 0.23460253831730382,
+    "used_fields": [
+      "sales",
+      "commission_brl",
+      "rating"
+    ],
+    "missing_fields": []
+  },
+  {
+    "product": {
+      "name": "Mouse Sem Fio Dual Mode Bluetooth Uniwity",
+      "price": 62.62,
+      "commission_rate": null,
+      "commission_brl": 5.64,
+      "sales": 3800,
+      "rating": 4.4
+    },
+    "score": 0.23138112661232568,
+    "used_fields": [
+      "sales",
+      "commission_brl",
+      "rating"
+    ],
+    "missing_fields": []
+  },
+  {
+    "product": {
+      "name": "Teclado Gamer Mecânico USB Com Fio 60%",
+      "price": 93.99,
+      "commission_rate": null,
+      "commission_brl": 10.4,
+      "sales": 269,
+      "rating": 4.6
+    },
+    "score": 0.20842724978973898,
+    "used_fields": [
+      "sales",
+      "commission_brl",
+      "rating"
+    ],
+    "missing_fields": []
+  },
+  {
+    "product": {
+      "name": "Kit Teclado e Mouse para Jogos e Trabalho",
+      "price": 50.0,
+      "commission_rate": null,
+      "commission_brl": 5.0,
+      "sales": null,
+      "rating": null
+    },
+    "score": 0.20100925147182505,
+    "used_fields": [
+      "commission_brl"
+    ],
+    "missing_fields": [
+      "sales",
+      "rating"
+    ]
+  },
+  {
+    "product": {
+      "name": "Mouse Óptico Vertical Recarregável Bluetooth",
+      "price": 38.0,
+      "commission_rate": null,
+      "commission_brl": 4.08,
+      "sales": null,
+      "rating": null
+    },
+    "score": 0.16232127838519764,
+    "used_fields": [
+      "commission_brl"
+    ],
+    "missing_fields": [
+      "sales",
+      "rating"
+    ]
+  },
+  {
+    "product": {
+      "name": "Teclado Para Jogos Com Fio 61 Teclas RGB Backlight",
+      "price": null,
+      "commission_rate": null,
+      "commission_brl": null,
+      "sales": 956,
+      "rating": 4.6
+    },
+    "score": 0.15959217589722582,
+    "used_fields": [
+      "sales",
+      "rating"
+    ],
+    "missing_fields": [
+      "commission_brl"
+    ]
+  },
+  {
+    "product": {
+      "name": "Kit Teclado e Mouse Gamer com Fio Led Colorido",
+      "price": 54.92,
+      "commission_rate": null,
+      "commission_brl": 3.57,
+      "sales": null,
+      "rating": null
+    },
+    "score": 0.14087468460891503,
+    "used_fields": [
+      "commission_brl"
+    ],
+    "missing_fields": [
+      "sales",
+      "rating"
+    ]
+  },
+  {
+    "product": {
+      "name": "Mouse com fio USB iluminado RGB DPI ajustável",
+      "price": 27.04,
+      "commission_rate": null,
+      "commission_brl": 2.8,
+      "sales": null,
+      "rating": null
+    },
+    "score": 0.10849453322119426,
+    "used_fields": [
+      "commission_brl"
+    ],
+    "missing_fields": [
+      "sales",
+      "rating"
+    ]
+  },
+  {
+    "product": {
+      "name": "Mouse Gamer Sem Fio H'Maston MS09",
+      "price": 28.94,
+      "commission_rate": null,
+      "commission_brl": 1.88,
+      "sales": null,
+      "rating": null
+    },
+    "score": 0.06980656013456686,
+    "used_fields": [
+      "commission_brl"
+    ],
+    "missing_fields": [
+      "sales",
+      "rating"
+    ]
+  },
+  {
+    "product": {
+      "name": "Kit Teclado e Mouse sem Fio Bluetooth Cores",
+      "price": 36.99,
+      "commission_rate": null,
+      "commission_brl": 0.22,
+      "sales": null,
+      "rating": null
+    },
+    "score": 0.0,
+    "used_fields": [
+      "commission_brl"
+    ],
+    "missing_fields": [
+      "sales",
+      "rating"
+    ]
+  }
+]

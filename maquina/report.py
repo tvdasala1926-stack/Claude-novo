@@ -9,7 +9,8 @@ def _fmt(value, spec: str = "") -> str:
     return "n/d" if value is None else format(value, spec)
 
 
-def build_report(ranked: list[dict], analyses: list[VideoAnalysis], errors: list[dict]) -> str:
+def build_report(ranked: list[dict], analyses: list[VideoAnalysis], errors: list[dict],
+                 insights: dict | None = None) -> str:
     out = ["# Relatório de análise", ""]
 
     out += ["## Produtos (ranking)", ""]
@@ -41,6 +42,34 @@ def build_report(ranked: list[dict], analyses: list[VideoAnalysis], errors: list
         out += [f"| {s.name} | {s.start:.1f}s | {s.end:.1f}s | {s.end - s.start:.1f}s |"
                 for s in a.segments]
         out.append("")
+
+    if insights:
+        by_video = {e["video"]: e for e in insights["videos"]}
+        top = [by_video[i] for i in insights.get("top5", [])]
+        out += ["## Os 5 melhores exemplos", ""]
+        for rank, e in enumerate(top, start=1):
+            a = analyses[e["video"] - 1]
+            out += [
+                f"### {rank}º — Vídeo {e['video']} ({e['score']}/100) — {a.ref.url or a.ref.path}",
+                f"- **Gancho:** {e['hook']}",
+                f"- **Primeiros 3 segundos:** {e['first3s']}",
+                f"- **Problema:** {e['problem']}",
+                f"- **Solução:** {e['solution']}",
+                f"- **O que prende a atenção:** {'; '.join(e['retention'])}",
+                f"- **Ritmo:** {e['pacing']}",
+                f"- **Por que esta nota:** {e['why']}", "",
+            ]
+        out += ["## Nota de potencial de todos os vídeos", "",
+                "Critérios (100 pts): gancho 25, ritmo 20, problema→solução 20, prova/demonstração 15, CTA 10, desempenho medido 10.",
+                "", "| Vídeo | Nota | Gancho | Ritmo | P→S | Prova | CTA | Desemp. | Relevância p/ venda |",
+                "|---|---|---|---|---|---|---|---|---|"]
+        for e in sorted(insights["videos"], key=lambda x: x["score"], reverse=True):
+            b = e["breakdown"]
+            out.append(f"| {e['video']} | {e['score']} | {b['gancho']} | {b['ritmo']} | "
+                       f"{b['problema_solucao']} | {b['prova']} | {b['cta']} | {b['desempenho']} | {e['relevance']} |")
+        out.append("")
+        if insights.get("notes"):
+            out += ["## Observações", ""] + [f"- {n}" for n in insights["notes"]] + [""]
 
     if analyses:
         durations = [a.probe.duration for a in analyses]

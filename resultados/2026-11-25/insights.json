@@ -1,0 +1,389 @@
+{
+  "videos": [
+    {
+      "video": 1,
+      "hook": "Pergunta de nostalgia: 'Lembra dessa corrida aqui?'",
+      "first3s": "Pergunta direta ao espectador sobre uma memória comum de gamers (download lento).",
+      "problem": "Perrengue de esperar jogo baixar a noite toda.",
+      "solution": "Não identificado só pela fala; é #publi, produto não aparece nos trechos transcritos.",
+      "retention": [
+        "nostalgia compartilhada",
+        "humor",
+        "comparação inesperada (download vs impressão 3D)"
+      ],
+      "pacing": "Moderado, 8 cortes/min, 44 s.",
+      "relevance": "baixa",
+      "breakdown": {
+        "gancho": 23,
+        "ritmo": 12,
+        "problema_solucao": 12,
+        "prova": 6,
+        "cta": 4,
+        "desempenho": 7
+      },
+      "score": 64,
+      "why": "Gancho de nostalgia muito forte e universal para gamers; 27,7 mi de visualizações. Mas o produto anunciado não está claro e a taxa de engajamento é baixa (0,4%), então serve mais como técnica de gancho do que como modelo de venda."
+    },
+    {
+      "video": 2,
+      "hook": "Pergunta + formato invertido: 'O novo Acer Nitro tá melhor que o anterior?' e 'review ao contrário'",
+      "first3s": "Texto grande na tela com a pergunta e criador entrando em quadro; promessa de um review diferente.",
+      "problem": "Review tradicional é previsível; o público quer ver desempenho real antes das especificações.",
+      "solution": "Primeiro joga (CS, Cyberpunk) e edita vídeo, só depois mostra as especificações que explicam o resultado.",
+      "retention": [
+        "quebra de expectativa (formato 'ao contrário')",
+        "prova antes da teoria",
+        "legenda grande na tela",
+        "mudanças de cenário"
+      ],
+      "pacing": "Rápido, 26 cortes/min, 79 s.",
+      "relevance": "média",
+      "breakdown": {
+        "gancho": 22,
+        "ritmo": 16,
+        "problema_solucao": 12,
+        "prova": 14,
+        "cta": 3,
+        "desempenho": 7
+      },
+      "score": 74,
+      "why": "Gancho criativo: pergunta que o público quer ver respondida mais um formato novo. Demonstra o produto em uso. Perde pontos por não ter chamada para ação clara nos trechos transcritos e por ser notebook, não periférico."
+    },
+    {
+      "video": 3,
+      "hook": "Problema pessoal imediato: 'Terminei de montar meu PC novo, mas deu problema: não saía som'",
+      "first3s": "Quadros mostram a montagem do PC (placa de vídeo sendo instalada) com iluminação RGB; a fala já apresenta o problema.",
+      "problem": "PC novo montado sem áudio.",
+      "solution": "Headset sem fio HAVIT H668BT: Bluetooth 5.4, P2 para baixa latência, bateria de até 80 h, almofadas confortáveis, cancelamento de ruído, app de equalização, 'melhor opção até R$ 200'.",
+      "retention": [
+        "problema real e relatable logo na frase de abertura",
+        "cortes constantes (cerca de 1 a cada 1,5 s)",
+        "lista de benefícios curta e específica com números (80 h, 5.4)",
+        "preço-âncora (até R$ 200)",
+        "CTA de baixo atrito: 'comenta FONE que eu te mando o link'"
+      ],
+      "pacing": "Muito rápido, 39 cortes/min, 47 s.",
+      "relevance": "alta",
+      "breakdown": {
+        "gancho": 21,
+        "ritmo": 18,
+        "problema_solucao": 19,
+        "prova": 12,
+        "cta": 9,
+        "desempenho": 7
+      },
+      "score": 86,
+      "why": "Estrutura quase perfeita de venda: problema → produto → benefícios com números → preço → CTA simples. Prova é só falada (poucas demonstrações visuais), por isso 12/15 em prova. 1,8 mi de visualizações, mas engajamento de 0,5%: não dá para saber se houve impulsionamento."
+    },
+    {
+      "video": 4,
+      "hook": "Fórmula de série: 'Monto PC de R$ 4.000? Tá bom!'",
+      "first3s": "Close no rosto, gesto com a mão e texto grande ('Monta um PC', 'de R$4.000?', 'tá bom!') em três tempos.",
+      "problem": "Pessoas querem um PC bom sem gastar demais e não sabem o que comprar.",
+      "solution": "Lista de peças recomendadas para o orçamento, com links no site/grupo de promoções.",
+      "retention": [
+        "fórmula repetida e reconhecível no título e na fala ('Monto PC de R$X? Tá bom!')",
+        "preço fechado como âncora de curiosidade",
+        "texto grande na tela acompanhando a fala",
+        "lista de peças com valores"
+      ],
+      "pacing": "Lento, 4 cortes/min, 99 s (fala direta à câmera).",
+      "relevance": "média",
+      "breakdown": {
+        "gancho": 22,
+        "ritmo": 8,
+        "problema_solucao": 14,
+        "prova": 12,
+        "cta": 8,
+        "desempenho": 9
+      },
+      "score": 73,
+      "why": "Hook-fórmula excelente: repetível e com o orçamento como âncora. Engajamento muito alto (8,8%, 982 comentários), o melhor do conjunto. Ritmo lento e duração longa limitam o potencial de viralização, mas a série mostra que o formato fideliza."
+    },
+    {
+      "video": 5,
+      "hook": "Revelação de itens: 'Estas são todas as coisas que tenho que levar...'",
+      "first3s": "Criador de pé diante da cama com mouses, teclados e fones espalhados; texto em destaque.",
+      "problem": "Nenhum problema explícito; é um 'o que tem na minha mala'.",
+      "solution": "Mostra periféricos que usa no campeonato.",
+      "retention": [
+        "curiosidade sobre o setup de um jogador",
+        "itens visíveis na cama",
+        "texto em destaque com palavras-chave"
+      ],
+      "pacing": "Lento, 4 cortes/min, 55 s.",
+      "relevance": "alta",
+      "breakdown": {
+        "gancho": 17,
+        "ritmo": 5,
+        "problema_solucao": 8,
+        "prova": 14,
+        "cta": 2,
+        "desempenho": 7
+      },
+      "score": 53,
+      "why": "Bom para curiosidade e autoridade (periféricos de competidor), mas não tem estrutura de venda: não há problema, preço nem chamada para ação. Serve de inspiração para vídeos 'meu setup'."
+    },
+    {
+      "video": 6,
+      "hook": "Mesmo problema do vídeo 3: 'Terminei de montar meu PC novo... não saía som'",
+      "first3s": "Frames iniciais mostram o PC montado com RGB, depois a placa de vídeo na mão.",
+      "problem": "PC novo sem áudio e o cabo atrapalha.",
+      "solution": "Headset gamer sem fio HAVIT Flux H3 Plus, 'o mais vendido de todos': Bluetooth, dongle 2.4 GHz de baixa latência, bateria de mais de 30 h, microfone removível, almofadas respiráveis.",
+      "retention": [
+        "mesma estrutura validada do vídeo 3",
+        "prova social: 'o mais vendido de todos'",
+        "cortes constantes",
+        "CTA por comentário"
+      ],
+      "pacing": "Muito rápido, 43 cortes/min, 41 s.",
+      "relevance": "alta",
+      "breakdown": {
+        "gancho": 21,
+        "ritmo": 19,
+        "problema_solucao": 19,
+        "prova": 12,
+        "cta": 9,
+        "desempenho": 6
+      },
+      "score": 86,
+      "why": "Reaproveita a mesma fórmula do vídeo 3 com outro produto e também deu certo (744 mil visualizações). Indica que a estrutura problema → solução → CTA por comentário é replicável entre produtos."
+    },
+    {
+      "video": 7,
+      "hook": "Fórmula: 'Monto PC de R$ 4.500, tá bom!'",
+      "first3s": "Mesmo formato do vídeo 4 com novo orçamento.",
+      "problem": "Orçamento intermediário: o que comprar?",
+      "solution": "Lista de peças no orçamento.",
+      "retention": [
+        "fórmula repetida e reconhecível no título e na fala ('Monto PC de R$X? Tá bom!')",
+        "preço fechado como âncora de curiosidade",
+        "texto grande na tela acompanhando a fala",
+        "lista de peças com valores"
+      ],
+      "pacing": "Lento, 4 cortes/min, 107 s.",
+      "relevance": "média",
+      "breakdown": {
+        "gancho": 20,
+        "ritmo": 8,
+        "problema_solucao": 13,
+        "prova": 12,
+        "cta": 8,
+        "desempenho": 8
+      },
+      "score": 69,
+      "why": "Mesma fórmula de série com engajamento alto (8,9%). Duração de quase 2 minutos reduz o potencial de viralização."
+    },
+    {
+      "video": 8,
+      "hook": "Fórmula: 'Monto PC de 4.000 reais pra rodar tudo? Tá bom!'",
+      "first3s": "Mesmo formato.",
+      "problem": "Rodar tudo no orçamento.",
+      "solution": "Lista de peças.",
+      "retention": [
+        "fórmula repetida e reconhecível no título e na fala ('Monto PC de R$X? Tá bom!')",
+        "preço fechado como âncora de curiosidade",
+        "texto grande na tela acompanhando a fala",
+        "lista de peças com valores"
+      ],
+      "pacing": "Lento, 5 cortes/min, 123 s.",
+      "relevance": "média",
+      "breakdown": {
+        "gancho": 20,
+        "ritmo": 8,
+        "problema_solucao": 13,
+        "prova": 12,
+        "cta": 7,
+        "desempenho": 8
+      },
+      "score": 68,
+      "why": "Repetição da fórmula; boa retenção de fãs mas vídeo longo."
+    },
+    {
+      "video": 9,
+      "hook": "Fórmula: 'Monto o PC de 6.500 reais? Tá bom'",
+      "first3s": "Mesmo formato.",
+      "problem": "Orçamento maior com PC completo.",
+      "solution": "Lista de peças.",
+      "retention": [
+        "fórmula repetida e reconhecível no título e na fala ('Monto PC de R$X? Tá bom!')",
+        "preço fechado como âncora de curiosidade",
+        "texto grande na tela acompanhando a fala",
+        "lista de peças com valores"
+      ],
+      "pacing": "Lento, 5 cortes/min, 121 s.",
+      "relevance": "média",
+      "breakdown": {
+        "gancho": 20,
+        "ritmo": 8,
+        "problema_solucao": 13,
+        "prova": 12,
+        "cta": 7,
+        "desempenho": 8
+      },
+      "score": 68,
+      "why": "Mesma fórmula; engajamento muito alto (9,5%)."
+    },
+    {
+      "video": 10,
+      "hook": "Fórmula: 'Monto um PC de 2.800 reais? Tá bom!'",
+      "first3s": "Mesmo formato.",
+      "problem": "Orçamento de entrada.",
+      "solution": "Lista de peças com margem para upgrade.",
+      "retention": [
+        "fórmula repetida e reconhecível no título e na fala ('Monto PC de R$X? Tá bom!')",
+        "preço fechado como âncora de curiosidade",
+        "texto grande na tela acompanhando a fala",
+        "lista de peças com valores"
+      ],
+      "pacing": "Lento, 2 cortes/min, 85 s.",
+      "relevance": "média",
+      "breakdown": {
+        "gancho": 20,
+        "ritmo": 8,
+        "problema_solucao": 12,
+        "prova": 12,
+        "cta": 7,
+        "desempenho": 7
+      },
+      "score": 66,
+      "why": "Orçamento de entrada atrai público maior; menos visualizações que os anteriores."
+    },
+    {
+      "video": 11,
+      "hook": "Fórmula: 'Monto o PC de 10.000 reais, tá bom!'",
+      "first3s": "Mesmo formato.",
+      "problem": "Orçamento alto, público menor.",
+      "solution": "Lista de peças premium.",
+      "retention": [
+        "fórmula repetida e reconhecível no título e na fala ('Monto PC de R$X? Tá bom!')",
+        "preço fechado como âncora de curiosidade",
+        "texto grande na tela acompanhando a fala",
+        "lista de peças com valores"
+      ],
+      "pacing": "Lento, 4 cortes/min, 114 s.",
+      "relevance": "média",
+      "breakdown": {
+        "gancho": 19,
+        "ritmo": 8,
+        "problema_solucao": 12,
+        "prova": 12,
+        "cta": 7,
+        "desempenho": 7
+      },
+      "score": 65,
+      "why": "Menor alcance por ser faixa de preço de nicho."
+    },
+    {
+      "video": 12,
+      "hook": "Fórmula com contexto de mercado: 'PC de nova geração AM5 barato'",
+      "first3s": "Mesmo formato, mas o gancho já adianta que as palavras 'nova geração' e 'barato' não combinam.",
+      "problem": "Peças caras por escassez de memória.",
+      "solution": "Configuração AM5 o mais barata possível.",
+      "retention": [
+        "tema atual de mercado (crise de memória)",
+        "tensão entre 'novo' e 'barato'"
+      ],
+      "pacing": "Muito lento, 3 cortes/min, 155 s.",
+      "relevance": "baixa",
+      "breakdown": {
+        "gancho": 17,
+        "ritmo": 7,
+        "problema_solucao": 11,
+        "prova": 12,
+        "cta": 6,
+        "desempenho": 7
+      },
+      "score": 60,
+      "why": "Tema técnico e vídeo muito longo; menos adequado para venda de periféricos."
+    },
+    {
+      "video": 13,
+      "hook": "Fórmula: 'Monto PC gamer de 6.500 reais ideal pra durar anos'",
+      "first3s": "Mesmo formato com promessa de durabilidade.",
+      "problem": "Aumento de preços de componentes.",
+      "solution": "Configuração pensada para durar anos.",
+      "retention": [
+        "fórmula repetida e reconhecível no título e na fala ('Monto PC de R$X? Tá bom!')",
+        "preço fechado como âncora de curiosidade",
+        "texto grande na tela acompanhando a fala",
+        "lista de peças com valores"
+      ],
+      "pacing": "Muito lento, 3 cortes/min, 150 s.",
+      "relevance": "média",
+      "breakdown": {
+        "gancho": 18,
+        "ritmo": 7,
+        "problema_solucao": 11,
+        "prova": 12,
+        "cta": 6,
+        "desempenho": 7
+      },
+      "score": 61,
+      "why": "Promessa de durabilidade é boa; duração de 2,5 minutos pesa contra."
+    },
+    {
+      "video": 14,
+      "hook": "Superlativo: 'Esse aqui é um dos melhores controles do mundo'",
+      "first3s": "Apresenta o controle X3 já na primeira frase, com promessa de transformar o celular Android em console portátil.",
+      "problem": "Jogar no celular sem controle é ruim.",
+      "solution": "Controle X3 com analógicos, gatilhos e botões com micro-switch, conexão USB-C.",
+      "retention": [
+        "promessa forte de transformação (celular vira console)",
+        "cortes rápidos",
+        "demonstração do produto (não verificada visualmente)",
+        "CTA com código e link na bio"
+      ],
+      "pacing": "Rápido, 32 cortes/min, 51 s.",
+      "relevance": "alta",
+      "breakdown": {
+        "gancho": 17,
+        "ritmo": 17,
+        "problema_solucao": 10,
+        "prova": 12,
+        "cta": 10,
+        "desempenho": 4
+      },
+      "score": 70,
+      "why": "É o único exemplo de anúncio de acessório gamer com CTA completo (código Temu e link na bio). A promessa é boa, mas o desempenho foi modesto (147 mil visualizações, engajamento de 0,6%): o superlativo 'um dos melhores do mundo' é genérico e fraco como gancho."
+    },
+    {
+      "video": 15,
+      "hook": "Urgência de mercado: 'as notícias não são boas...' sobre placa de vídeo",
+      "first3s": "Fala direta ao espectador anunciando risco de alta de preço.",
+      "problem": "Preço de placas de vídeo vai subir.",
+      "solution": "Aproveitar as promoções do fim de semana para comprar.",
+      "retention": [
+        "urgência e escassez",
+        "data específica (8/8)"
+      ],
+      "pacing": "Lento, 2 cortes/min, 105 s.",
+      "relevance": "baixa",
+      "breakdown": {
+        "gancho": 18,
+        "ritmo": 7,
+        "problema_solucao": 12,
+        "prova": 6,
+        "cta": 7,
+        "desempenho": 5
+      },
+      "score": 55,
+      "why": "Urgência é uma boa técnica de venda, mas o produto não é periférico e o ritmo é lento."
+    }
+  ],
+  "top5": [
+    3,
+    6,
+    2,
+    4,
+    14
+  ],
+  "notes": [
+    "Esta análise é um julgamento meu (Claude) a partir de transcrição automática, métricas públicas e detecção de cortes. Só vi quadros dos vídeos 2, 3, 4, 5 e 6; nos demais, a avaliação visual não foi verificada. A nota é o somatório de uma régua fixa, não uma medida do TikTok.",
+    "A transcrição automática (modelo 'base') comete erros; as falas citadas são aproximadas.",
+    "Engajamento = (curtidas + comentários) / visualizações. Os vídeos 3 e 6 têm muitas visualizações e engajamento baixo (0,5% e 0,3%); não dá para saber se houve impulsionamento.",
+    "Os 24 produtos da lista (mouses e teclados) não aparecem nos vídeos analisados. Os vídeos de produto encontrados vendem headsets HAVIT, um controle X3, notebook e PCs. Falta uma lista de produtos de headset para cruzar.",
+    "Padrão mais forte para vender periféricos: problema real e relatable na primeira frase → produto → 3 a 5 benefícios com números → preço-âncora → CTA 'comenta [palavra] que eu te mando o link' (vídeos 3 e 6).",
+    "Para replicar, usar roteiro novo, produto e cenas próprias: copiar a fala ou as imagens de outro criador pode gerar denúncia."
+  ]
+}

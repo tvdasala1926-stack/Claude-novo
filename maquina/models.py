@@ -63,3 +63,16 @@ class VideoAnalysis(_Serializable):
     hook_text: str = ""
     first3s_text: str = ""
     cuts_per_minute: float = 0.0
+
+
+def video_analysis_from_dict(d: dict) -> VideoAnalysis:
+    return VideoAnalysis(
+        ref=VideoRef(**d["ref"]),
+        probe=VideoProbe(**d["probe"]),
+        cuts=list(d["cuts"]),
+        words=[Word(**w) for w in d["words"]],
+        segments=[Segment(**x) for x in d["segments"]],
+        hook_text=d["hook_text"],
+        first3s_text=d["first3s_text"],
+        cuts_per_minute=d["cuts_per_minute"],
+    )

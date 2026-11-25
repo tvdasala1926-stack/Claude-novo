@@ -7,7 +7,8 @@ from pathlib import Path
 from maquina.discover import enrich_comments, filter_product_videos, list_profile_videos, load_profiles, top_by_views
 from maquina.fetch import FetchError, fetch_video
 from maquina.importer import load_products, load_video_refs
-from maquina.models import VideoAnalysis, VideoRef
+from maquina.insights import load_insights
+from maquina.models import VideoAnalysis, VideoRef, video_analysis_from_dict
 from maquina.probe import probe_video
 from maquina.rank import rank_products
 from maquina.report import build_report
@@ -97,3 +98,21 @@ def run_pipeline(
     state.update(stage="done")
     _write_json(run_dir / "state.json", state)
     return run_dir
+
+
+def rebuild_report(run_dir: Path) -> Path:
+    """Re-render report.md from saved analyses plus insights.json (if present)."""
+    run_dir = Path(run_dir)
+    analyses = [
+        video_analysis_from_dict(json.loads(f.read_text(encoding="utf-8")))
+        for f in sorted((run_dir / "videos").glob("*/analysis.json"), key=lambda p: int(p.parent.name))
+    ]
+    from maquina.models import Product
+
+    ranked = [{**r, "product": Product(**r["product"])}
+              for r in json.loads((run_dir / "products_ranked.json").read_text(encoding="utf-8"))]
+    errors = json.loads((run_dir / "errors.json").read_text(encoding="utf-8"))
+    insights = load_insights(run_dir / "insights.json", len(analyses))
+    out = run_dir / "report.md"
+    out.write_text(build_report(ranked, analyses, errors, insights), encoding="utf-8")
+    return out
