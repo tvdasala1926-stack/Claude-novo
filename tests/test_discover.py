@@ -28,3 +28,13 @@ def test_list_profile_videos_real_profile_has_metrics():
     assert 1 <= len(refs) <= 3
     assert all(r.url and "/video/" in r.url for r in refs)
     assert any(r.views is not None for r in refs)
+
+
+def test_filter_product_videos_keeps_only_product_titles():
+    from maquina.discover import filter_product_videos
+
+    refs = [VideoRef(url="a", title="PC de 4000 Reais !!! #setupgamer"),
+            VideoRef(url="b", title="Fortnitemares 2026 💀 #edit"),
+            VideoRef(url="c", title="DEU RUIM... mas o HAVIT H668BT resolveu #publi"),
+            VideoRef(url="d", title=None)]
+    assert [r.url for r in filter_product_videos(refs)] == ["a", "c"]

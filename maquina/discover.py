@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import re
 from pathlib import Path
 
 from maquina.fetch import FetchError
@@ -67,3 +68,16 @@ def enrich_comments(ref: VideoRef) -> VideoRef:
 def top_by_views(refs: list[VideoRef], n: int) -> list[VideoRef]:
     ordered = sorted(refs, key=lambda r: (r.views is not None, r.views or 0), reverse=True)
     return ordered[:n]
+
+
+PRODUCT_KEYWORDS = re.compile(
+    r"teclado|mouse|headset|fone|setup|mousepad|gamer|periférico|periferico|tiktokshop|"
+    r"tiktok shop|achadinho|achados|publi|review|unboxing|link na bio|cupom|promo|oferta|"
+    r"black ?friday|compre|comprei|monitor|cadeira|\bpc\b",
+    re.I,
+)
+
+
+def filter_product_videos(refs: list[VideoRef]) -> list[VideoRef]:
+    """Keep videos whose title mentions a product/review/ad keyword."""
+    return [r for r in refs if r.title and PRODUCT_KEYWORDS.search(r.title)]

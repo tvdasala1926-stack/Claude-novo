@@ -4,7 +4,7 @@ import json
 import time
 from pathlib import Path
 
-from maquina.discover import enrich_comments, list_profile_videos, load_profiles, top_by_views
+from maquina.discover import enrich_comments, filter_product_videos, list_profile_videos, load_profiles, top_by_views
 from maquina.fetch import FetchError, fetch_video
 from maquina.importer import load_products, load_video_refs
 from maquina.models import VideoAnalysis, VideoRef
@@ -49,6 +49,7 @@ def run_pipeline(
     profiles_file: Path | None = None,
     per_profile: int = 10,
     top: int = 30,
+    only_products: bool = False,
 ) -> Path:
     run_dir = Path(out_root) / (run_id or time.strftime("%Y%m%d-%H%M%S"))
     run_dir.mkdir(parents=True, exist_ok=True)
@@ -61,6 +62,8 @@ def run_pipeline(
                 found += list_profile_videos(profile, limit=per_profile)
             except FetchError as e:
                 errors.append({"video": profile, "error": str(e)})
+        if only_products:
+            found = filter_product_videos(found)
         known = {r.url for r in refs}
         refs += [enrich_comments(r) for r in top_by_views(
             [r for r in found if r.url not in known], top)]

@@ -68,3 +68,13 @@ def test_pipeline_discovers_videos_from_profiles(tmp_path: Path):
     assert analysis["ref"]["views"] is not None
     report = (run_dir / "report.md").read_text()
     assert "visualizações" in report
+
+
+def test_pipeline_only_products_flag_filters_profile_videos(tmp_path: Path):
+    profiles = tmp_path / "perfis.txt"
+    profiles.write_text("@tosemkit\n", encoding="utf-8")
+    run_dir = run_pipeline(None, None, tmp_path / "runs", run_id="f1", profiles_file=profiles,
+                           per_profile=6, top=2, only_products=True)
+    import json as _j
+    a = _j.loads((run_dir / "videos" / "1" / "analysis.json").read_text())
+    assert any(k in (a["ref"]["title"] or "").lower() for k in ("pc", "setup", "gamer"))
