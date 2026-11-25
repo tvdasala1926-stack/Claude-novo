@@ -4,6 +4,7 @@ import json
 import time
 from pathlib import Path
 
+from maquina.discover import enrich_comments, list_profile_videos, load_profiles, top_by_views
 from maquina.fetch import FetchError, fetch_video
 from maquina.importer import load_products, load_video_refs
 from maquina.models import VideoAnalysis, VideoRef
@@ -41,13 +42,28 @@ def _write_json(path: Path, data) -> None:
 
 def run_pipeline(
     products_file: Path | None,
-    videos_file: Path,
+    videos_file: Path | None,
     out_root: Path,
     run_id: str | None = None,
+    *,
+    profiles_file: Path | None = None,
+    per_profile: int = 10,
+    top: int = 30,
 ) -> Path:
     run_dir = Path(out_root) / (run_id or time.strftime("%Y%m%d-%H%M%S"))
     run_dir.mkdir(parents=True, exist_ok=True)
-    refs = load_video_refs(videos_file)
+    refs = load_video_refs(videos_file) if videos_file else []
+    errors: list[dict] = []
+    if profiles_file:
+        found: list[VideoRef] = []
+        for profile in load_profiles(profiles_file):
+            try:
+                found += list_profile_videos(profile, limit=per_profile)
+            except FetchError as e:
+                errors.append({"video": profile, "error": str(e)})
+        known = {r.url for r in refs}
+        refs += [enrich_comments(r) for r in top_by_views(
+            [r for r in found if r.url not in known], top)]
     state = {"stage": "starting", "videos_done": 0, "videos_total": len(refs)}
     _write_json(run_dir / "state.json", state)
 
@@ -59,7 +75,6 @@ def run_pipeline(
     ])
 
     analyses: list[VideoAnalysis] = []
-    errors: list[dict] = []
     for n, ref in enumerate(refs, start=1):
         state.update(stage=f"analyzing video {n}/{len(refs)}")
         _write_json(run_dir / "state.json", state)

@@ -22,6 +22,11 @@ class VideoRef(_Serializable):
     url: str | None = None
     path: str | None = None
     product: str | None = None
+    title: str | None = None
+    views: int | None = None
+    likes: int | None = None
+    comments: int | None = None
+    published: int | None = None  # unix timestamp, when the platform provides it
 
 
 @dataclass

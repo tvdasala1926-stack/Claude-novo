@@ -56,3 +56,15 @@ def test_silent_single_shot_video_is_analyzed(tmp_path: Path, silent_video: Path
     a = analyze_video(VideoRef(path=str(silent_video)), tmp_path)
     assert a.words == [] and a.cuts == [] and a.cuts_per_minute == 0.0
     assert len(a.segments) == 8 and a.segments[-1].end == a.probe.duration
+
+
+def test_pipeline_discovers_videos_from_profiles(tmp_path: Path):
+    profiles = tmp_path / "perfis.txt"
+    profiles.write_text("@scout2015\n@perfil_que_nao_existe_zzzz_99999\n", encoding="utf-8")
+    run_dir = run_pipeline(None, None, tmp_path / "runs", run_id="p1",
+                           profiles_file=profiles, per_profile=2, top=1)
+    analysis = json.loads((run_dir / "videos" / "1" / "analysis.json").read_text())
+    assert analysis["ref"]["url"].startswith("https://www.tiktok.com/@scout2015/video/")
+    assert analysis["ref"]["views"] is not None
+    report = (run_dir / "report.md").read_text()
+    assert "visualizações" in report
