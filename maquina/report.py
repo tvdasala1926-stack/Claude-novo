@@ -14,12 +14,12 @@ def build_report(ranked: list[dict], analyses: list[VideoAnalysis], errors: list
 
     out += ["## Produtos (ranking)", ""]
     if ranked:
-        out += ["| # | Produto | Score | Preço | Comissão | Vendas | Avaliação |", "|---|---|---|---|---|---|---|"]
+        out += ["| # | Produto | Score | Preço | Ganho/venda (R$) | Comissão % | Vendas | Avaliação |", "|---|---|---|---|---|---|---|---|"]
         for i, r in enumerate(ranked, start=1):
             p = r["product"]
             out.append(
                 f"| {i} | {p.name} | {r['score']:.2f} | {_fmt(p.price, '.2f')} | "
-                f"{_fmt(p.commission_rate, 'g')} | {_fmt(p.sales)} | {_fmt(p.rating, 'g')} |"
+                f"{_fmt(p.commission_brl, '.2f')} | {_fmt(p.commission_rate, 'g')} | {_fmt(p.sales)} | {_fmt(p.rating, 'g')} |"
             )
         out += ["", "n/d = dado não informado; não foi estimado.", ""]
     else:

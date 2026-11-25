@@ -11,6 +11,7 @@ _FIELD_ALIASES = {
     "name": {"nome", "name", "produto", "product"},
     "price": {"preco", "price", "valor"},
     "commission_rate": {"comissao", "commission", "commission_rate", "taxa de comissao"},
+    "commission_brl": {"ganho", "ganho_reais", "comissao_reais", "commission_brl"},
     "sales": {"vendas", "sales", "vendidos"},
     "rating": {"avaliacao", "rating", "nota"},
 }
@@ -60,7 +61,7 @@ def _canonical(header: str) -> str | None:
 
 def _merge(a: Product, b: Product) -> Product:
     first, second = (a, b) if (a.sales or -1) >= (b.sales or -1) else (b, a)
-    for f in ("price", "commission_rate", "sales", "rating"):
+    for f in ("price", "commission_rate", "commission_brl", "sales", "rating"):
         if getattr(first, f) is None:
             setattr(first, f, getattr(second, f))
     first.name = a.name
@@ -86,6 +87,7 @@ def load_products(path: Path) -> list[Product]:
             name=name,
             price=parse_number(raw.get("price")),
             commission_rate=parse_number(raw.get("commission_rate")),
+            commission_brl=parse_number(raw.get("commission_brl")),
             sales=None if sales is None else int(round(sales)),
             rating=parse_number(raw.get("rating")),
         )

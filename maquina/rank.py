@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from maquina.models import Product
 
-DEFAULT_WEIGHTS = {"sales": 0.6, "commission_rate": 0.3, "rating": 0.1}
+DEFAULT_WEIGHTS = {"sales": 0.5, "commission_brl": 0.3, "rating": 0.2}
 
 
 def rank_products(

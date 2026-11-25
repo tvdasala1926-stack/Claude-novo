@@ -13,6 +13,7 @@ class Product(_Serializable):
     name: str
     price: float | None = None
     commission_rate: float | None = None
+    commission_brl: float | None = None  # R$ earned per sale
     sales: int | None = None
     rating: float | None = None
 
