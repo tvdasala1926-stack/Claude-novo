@@ -4,3 +4,7 @@ __pycache__/
 .superpowers/
 *.egg-info/
 .pytest_cache/
+assets/voices/*.onnx
+render3d/node_modules/
+work/
+out/

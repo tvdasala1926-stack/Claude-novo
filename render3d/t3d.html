@@ -1,0 +1,12 @@
+<!doctype html><html><body style="margin:0;background:#111"><canvas id="c"></canvas>
+<script type="importmap">{"imports":{"three":"/node_modules/three/build/three.module.js"}}</script>
+<script type="module">
+import * as THREE from 'three';
+const W=540,H=960; const r=new THREE.WebGLRenderer({canvas:document.getElementById('c'),antialias:true});
+r.setSize(W,H); const s=new THREE.Scene(); s.background=new THREE.Color(0x1a0f0a);
+const cam=new THREE.PerspectiveCamera(40,W/H,0.1,100); cam.position.set(0,3,6); cam.lookAt(0,0,0);
+s.add(new THREE.AmbientLight(0xffffff,0.6)); const l=new THREE.PointLight(0xff7a30,60,30); l.position.set(3,5,3); s.add(l);
+const m=new THREE.Mesh(new THREE.BoxGeometry(2,1,2),new THREE.MeshStandardMaterial({color:0xff6a2a,metalness:.3,roughness:.4})); s.add(m);
+window.frame=(t)=>{m.rotation.y=t;r.render(s,cam);return r.getContext().getParameter(r.getContext().VERSION)};
+window.ready=true;
+</script></body></html>
