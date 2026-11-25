@@ -1,6 +1,7 @@
 """End-to-end video production: voice -> timeline -> captions -> audio mix -> 3D render -> assemble -> QA."""
 from __future__ import annotations
 
+import hashlib
 import json
 import os
 import shutil
@@ -124,16 +125,22 @@ def produce(project_path: Path, out_dir: Path, formats: tuple[str, ...] = ("9x16
         shutil.copy(ass, out_dir / f"legendas_{fmt}.ass")
         final = out_dir / f"{name}_{fmt}.mp4"
         boundaries = [s["start"] for s in prep["timeline"]["scenes"][1:]]
+        silent = work / f"video_mudo_{fmt}.mp4"
+        stamp = work / f"video_mudo_{fmt}.sha"
+        digest = hashlib.sha256(((work / "timeline.json").read_text() + str(size)
+                                 + (ROOT / "render3d" / "engine.js").read_text()).encode()).hexdigest()
         for attempt in range(1, max_attempts + 1):
-            silent = work / f"video_mudo_{fmt}.mp4"
-            render_video(work / "timeline.json", size, silent)
+            cached = attempt == 1 and silent.is_file() and stamp.is_file() and stamp.read_text() == digest
+            if not cached:  # render only when inputs changed (or when a retry is needed)
+                render_video(work / "timeline.json", size, silent)
+                stamp.write_text(digest)
             assemble(silent, audio, ass, final, prep["total"])
             res = check_video(final, prep["total"], size, 30, expected_cuts=boundaries)
-            res["checks"].append(caption_sync)
-            res["ok"] = all(c["status"] != "falha" for c in res["checks"])
             res["attempts"] = attempt
             if res["ok"]:
                 break
+        res["checks"].append(caption_sync)  # depends on audio/captions, not on rendering: no retry
+        res["ok"] = all(c["status"] != "falha" for c in res["checks"])
         results[fmt] = res
         reports.append(render_report(f"{name} ({fmt}, tentativa {res['attempts']})", res))
     (out_dir / "conferencia.md").write_text("\n".join(reports), encoding="utf-8")

@@ -152,7 +152,7 @@ function styleKeyboard(kb, t, { mode = 'rgb', amp = 0.2, attack = 0.04, release 
     } else {
       k.glowMat.color.setHex(0x2a2a2e);
       k.capMat.emissive.setHex(0x000000);
-      k.capMat.color.setHex(0x55555c);
+      k.capMat.color.setHex(0x8a8a92); k.capMat.roughness = 0.9; k.capMat.metalness = 0;
     }
   });
 }
@@ -195,8 +195,8 @@ const UI = {};
   const h = sceneById.hook?.data || {};
   UI.title = el('el big', (h.lines || []).map((l, i) => `<div class="${i ? 'orange' : ''}">${l}</div>`).join(''), 'top:7%');
   const c = sceneById.compare?.data || {};
-  UI.cmpA = el('pill', c.left || 'MEMBRANA', 'left:6%;top:72%;');
-  UI.cmpB = el('pill', c.right || 'MECÂNICO', 'right:6%;top:72%;');
+  UI.cmpA = el('pill', c.left || 'MEMBRANA', 'left:5%;top:16%;');
+  UI.cmpB = el('pill', c.right || 'MECÂNICO', 'right:5%;top:16%;');
   UI.pills = TL.cues.map((cue, i) => {
     const side = i % 2 === 0 ? 'left:5%' : 'right:5%';
     return el('pill', cue.text, `${side};top:${20 + i * 11}%`);
@@ -272,9 +272,9 @@ const SCENES = {
   proof(lt, d) {
     showWall(false);
     const r = PORTRAIT ? Math.PI / 2 + Math.sin(lt * 1.1) * 0.3 : Math.sin(lt * 1.1) * 0.3;
-    setKb(mech, { x: 0, y: 0, z: 0, ry: r, s: PORTRAIT ? 0.5 : 0.8 }); setKb(soft, { visible: false });
+    setKb(mech, { x: 0, y: 0, z: 0, ry: r, s: PORTRAIT ? 0.74 : 0.8 }); setKb(soft, { visible: false });
     devices.visible = false; beams.forEach((b) => (b.visible = false));
-    camera.position.set(0, 6.0, 11); camera.lookAt(0, PORTRAIT ? 3.4 : 0, 0);
+    camera.position.set(0, 6.0, 11); camera.lookAt(0, PORTRAIT ? 2.8 : 0, 0);
     styleKeyboard(mech, TIME, { mode: 'rgb', wave: 0.6 });
     pop(UI.proof, lt - 0.1, 4);
     const p = easeOut((lt - 0.2) / 1.4), q = easeOut((lt - 1.2) / 1.2);
@@ -285,9 +285,9 @@ const SCENES = {
   },
   cta(lt, d) {
     showWall(false);
-    setKb(mech, { x: 0, y: 0, z: 0, ry: PORTRAIT ? Math.PI / 2 + Math.sin(lt * 1.2) * 0.25 : Math.sin(lt * 1.2) * 0.25, s: PORTRAIT ? 0.62 : 0.85 }); setKb(soft, { visible: false });
+    setKb(mech, { x: 0, y: 0, z: 0, ry: PORTRAIT ? Math.PI / 2 + Math.sin(lt * 1.2) * 0.25 : Math.sin(lt * 1.2) * 0.25, s: PORTRAIT ? 0.84 : 0.85 }); setKb(soft, { visible: false });
     devices.visible = false; beams.forEach((b) => (b.visible = false));
-    camera.position.set(0, 6.4, 10.5); camera.lookAt(0, PORTRAIT ? 3.2 : 0, 0);
+    camera.position.set(0, 6.4, 10.5); camera.lookAt(0, PORTRAIT ? 2.4 : 0, 0);
     styleKeyboard(mech, TIME, { mode: 'rgb', wave: 1.0 });
     pop(UI.price, lt - 0.1);
     pop(UI.cta, lt - 0.7); const pulse = 1 + 0.045 * Math.sin(lt * 7); UI.cta.style.transform += ` scale(${pulse})`;
@@ -306,7 +306,7 @@ function renderAt(t) {
   for (const s of TL.scenes.slice(1)) f = Math.max(f, clamp(1 - Math.abs(t - s.start) / 0.14));
   flash.style.opacity = (f * 0.5).toFixed(3);
   canvas.style.filter = f > 0.02 ? `blur(${(f * 14).toFixed(1)}px)` : 'none';
-  warm.intensity = 90 + 25 * Math.sin(t * 2.2);
+  warm.intensity = (sc.id === 'compare' ? 18 : 90) + 25 * Math.sin(t * 2.2) * (sc.id === 'compare' ? 0.2 : 1);
   composer.render();
 }
 window.renderAt = renderAt;

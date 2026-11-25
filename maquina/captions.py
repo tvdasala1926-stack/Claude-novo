@@ -30,10 +30,19 @@ def time_words(
                 sp_time[i1 + k] = whisper[j1 + k].start
 
     nd, ns = len(display), len(spoken)
-    starts: list[float | None] = []
-    for i in range(nd):
-        j = i if nd == ns else round(i * (ns - 1) / max(nd - 1, 1))
-        starts.append(sp_time.get(j))
+    # 1) anchor display tokens to spoken tokens that are identical after normalisation
+    dn = [_norm(t) for t in display]
+    d2s: dict[int, int] = {}
+    for tag, i1, i2, j1, j2 in difflib.SequenceMatcher(None, dn, sp, autojunk=False).get_opcodes():
+        if tag == "equal":
+            for k in range(i2 - i1):
+                d2s[i1 + k] = j1 + k
+        elif tag in ("replace",) and i2 > i1 and j2 > j1:
+            # a run of display tokens substituted by a run of spoken tokens: spread them over it
+            m, g = i2 - i1, j2 - j1
+            for k in range(m):
+                d2s[i1 + k] = j1 + (k * g) // m
+    starts: list[float | None] = [sp_time.get(d2s[i]) if i in d2s else None for i in range(nd)]
 
     # interpolate unknown starts between known neighbours (or window edges)
     known = [(-1, lo)] + [(i, s) for i, s in enumerate(starts) if s is not None] + [(nd, hi)]

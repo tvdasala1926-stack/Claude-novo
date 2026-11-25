@@ -53,3 +53,13 @@ def test_ass_highlights_current_word_and_srt_has_timecodes():
     assert ass.count("Dialogue:") == 2
     srt = to_srt(words)
     assert "00:00:00,000 --> 00:00:00,900" in srt and "Olha isso" in srt
+
+
+def test_words_after_a_multi_token_substitution_keep_their_own_times():
+    spoken = "hoje está noventa reais e setenta e sete centavos na promoção".split()
+    whisper = [W(t, i * 0.3, i * 0.3 + 0.25) for i, t in enumerate(spoken)]
+    out = time_words(["Hoje", "está", "R$", "90,77", "na", "promoção"], spoken, whisper, (0.0, 3.3))
+    by = {w.text: w.start for w in out}
+    assert by["na"] == pytest.approx(9 * 0.3) and by["promoção"] == pytest.approx(10 * 0.3)
+    assert by["R$"] == pytest.approx(2 * 0.3)
+    assert 2 * 0.3 < by["90,77"] < 9 * 0.3
