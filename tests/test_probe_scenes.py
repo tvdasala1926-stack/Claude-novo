@@ -32,3 +32,19 @@ def test_detect_scenes_finds_two_cuts(sample_video: Path):
 
 def test_detect_scenes_single_shot_is_empty(silent_video: Path):
     assert detect_scenes(silent_video) == []
+
+
+def test_has_audio_works_for_audio_only_files(tmp_path: Path):
+    import subprocess
+
+    from maquina.probe import has_audio
+
+    wav = tmp_path / "tone.wav"
+    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-f", "lavfi", "-i", "sine=d=1", str(wav)], check=True)
+    assert has_audio(wav) is True
+
+
+def test_has_audio_false_for_silent_video(silent_video: Path):
+    from maquina.probe import has_audio
+
+    assert has_audio(silent_video) is False

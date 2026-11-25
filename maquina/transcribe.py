@@ -4,7 +4,7 @@ import subprocess
 from pathlib import Path
 
 from maquina.models import Word
-from maquina.probe import probe_video
+from maquina.probe import has_audio
 
 _MODELS: dict[str, object] = {}
 
@@ -34,7 +34,7 @@ def _decode_audio(video: Path):
 def transcribe(path: Path, model_size: str = "base", language: str = "pt") -> list[Word]:
     """Word-level transcription. Videos without an audio track return []."""
     path = Path(path)
-    if not probe_video(path).has_audio:
+    if not has_audio(path):
         return []
     audio = _decode_audio(path)
     if audio.size == 0:

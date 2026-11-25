@@ -38,3 +38,16 @@ def probe_video(path: Path) -> VideoProbe:
         fps=_fraction(video.get("avg_frame_rate", "0/1")),
         has_audio=any(s["codec_type"] == "audio" for s in info["streams"]),
     )
+
+
+def has_audio(path: Path) -> bool:
+    """True if the file has an audio stream (works for audio-only files too)."""
+    path = Path(path)
+    if not path.is_file():
+        raise ValueError(f"arquivo não encontrado: {path}")
+    proc = subprocess.run(
+        ["ffprobe", "-v", "error", "-select_streams", "a", "-show_entries", "stream=index",
+         "-of", "csv=p=0", str(path)], capture_output=True, text=True)
+    if proc.returncode != 0:
+        raise ValueError(f"ffprobe falhou para {path}: {proc.stderr.strip()}")
+    return bool(proc.stdout.strip())
