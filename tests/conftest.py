@@ -10,10 +10,10 @@ def _ffmpeg(*args: str) -> None:
 
 @pytest.fixture
 def sample_video(tmp_path: Path) -> Path:
-    """6 s: red 0-2, green 2-4, blue 4-6; sine tone; cuts at 2 s and 4 s."""
+    """6 s: white 0-2, black 2-4, white 4-6; sine tone; cuts at 2 s and 4 s."""
     out = tmp_path / "sample.mp4"
     inputs = []
-    for color in ("red", "green", "blue"):
+    for color in ("white", "black", "white"):
         inputs += ["-f", "lavfi", "-i", f"color=c={color}:s=320x568:r=30:d=2"]
     inputs += ["-f", "lavfi", "-i", "sine=frequency=440:duration=6"]
     _ffmpeg(

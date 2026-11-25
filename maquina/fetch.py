@@ -30,6 +30,7 @@ def fetch_video(
         "format": "mp4/best",
         "noplaylist": True,
         "quiet": True,
+        "noprogress": True,
         "no_warnings": True,
         "merge_output_format": "mp4",
     }
